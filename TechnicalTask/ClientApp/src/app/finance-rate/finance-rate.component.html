@@ -1,0 +1,22 @@
+
+<h3>Finance Rates (%)  </h3>
+<div class="row">
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <td>Make</td>
+                <td>Type</td>
+                <td>Finance Type</td>
+                <td *ngFor="let r of financeRateTypes">{{r.Type}} (%)</td>
+            </tr>
+        </thead>
+       
+        <tr *ngFor="let rate of financeRates">
+            <td>{{rate.Make}}</td>
+            <td>{{rate.VehicleType}}</td>
+            <td>{{rate.FinanceType}}</td>
+            <td *ngFor="let r of financeRateTypes">{{rate["rate"+r.Id]}}</td>
+        </tr>
+    </table>
+
+</div>
